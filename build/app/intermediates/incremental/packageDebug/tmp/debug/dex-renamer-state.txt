@@ -1,4 +1,4 @@
-#Sun Oct 20 16:03:21 WIB 2024
+#Sun Oct 20 22:30:37 WIB 2024
 base.0=/Users/aleph/josh/trial_contact_list/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/aleph/josh/trial_contact_list/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/aleph/josh/trial_contact_list/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
