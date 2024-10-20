@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:trial_contact_list/core/di/service_locator.dart';
 import 'package:trial_contact_list/router/router.dart';
+import 'package:trial_contact_list/utils/palette.dart';
 
 void main() {
   initServicesLocator();
@@ -15,23 +16,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppRouter routes = s<AppRouter>();
 
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      title: 'Trial Contact App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: Palette.white,
+        fontFamily: 'Poppins',
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         useMaterial3: true,
       ),
-      home: MaterialApp.router(
-        title: 'Trial Contact App',
-        routerDelegate: AutoRouterDelegate(
-          routes,
-          navigatorObservers: () {
-            return <NavigatorObserver>[];
-          },
-        ),
-        routeInformationParser: routes.defaultRouteParser(),
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
+      routerDelegate: AutoRouterDelegate(
+        routes,
+        navigatorObservers: () {
+          return <NavigatorObserver>[];
+        },
       ),
+      builder: (BuildContext context, Widget? child) {
+        return SafeArea(child: child ?? const SizedBox.shrink());
+      },
+      routeInformationParser: routes.defaultRouteParser(),
     );
   }
 }
