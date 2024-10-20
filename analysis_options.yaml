@@ -1,0 +1,29 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    non_constant_identifier_names: ignore
+    invalid_annotation_target: ignore
+    missing_required_param: warning
+    missing_return: warning
+    todo: ignore
+
+linter:
+  rules:
+    sort_child_properties_last: false
+    camel_case_types: true
+    unawaited_futures: true
+    always_declare_return_types: true
+    always_specify_types: true
+    constant_identifier_names: false
+    prefer_final_fields: true
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    library_private_types_in_public_api: false
+    unnecessary_nullable_for_final_variable_declarations: false
+    always_use_package_imports: true
+    sort_constructors_first: true
+    use_key_in_widget_constructors: true
+
