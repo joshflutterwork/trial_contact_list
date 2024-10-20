@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:trial_contact_list/core/di/service_locator.dart';
+import 'package:trial_contact_list/router/router.dart';
 import 'package:trial_contact_list/utils/microcopy_string.dart';
 import 'package:trial_contact_list/utils/palette.dart';
 
@@ -91,7 +93,11 @@ class _LoginPageState extends State<LoginPage> {
                     color: Palette.blue,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  await s<AppRouter>().pushNamed(
+                    '/contact-list',
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Palette.button_color,
                 ),

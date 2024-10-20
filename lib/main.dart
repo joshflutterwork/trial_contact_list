@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trial_contact_list/core/di/service_locator.dart';
 import 'package:trial_contact_list/router/router.dart';
 import 'package:trial_contact_list/utils/palette.dart';
 
 void main() {
   initServicesLocator();
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
