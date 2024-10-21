@@ -19,7 +19,7 @@ mixin _$ContactState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isSuccess => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
-  List<ContactModel> get contactList => throw _privateConstructorUsedError;
+  List<ContactGroupModel> get contactList => throw _privateConstructorUsedError;
 
   /// Create a copy of ContactState
   /// with the given fields replaced by the non-null parameter values.
@@ -38,7 +38,7 @@ abstract class $ContactStateCopyWith<$Res> {
       {bool isLoading,
       bool isSuccess,
       bool isError,
-      List<ContactModel> contactList});
+      List<ContactGroupModel> contactList});
 }
 
 /// @nodoc
@@ -77,7 +77,7 @@ class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState>
       contactList: null == contactList
           ? _value.contactList
           : contactList // ignore: cast_nullable_to_non_nullable
-              as List<ContactModel>,
+              as List<ContactGroupModel>,
     ) as $Val);
   }
 }
@@ -94,7 +94,7 @@ abstract class _$$ContactStateImplCopyWith<$Res>
       {bool isLoading,
       bool isSuccess,
       bool isError,
-      List<ContactModel> contactList});
+      List<ContactGroupModel> contactList});
 }
 
 /// @nodoc
@@ -131,7 +131,7 @@ class __$$ContactStateImplCopyWithImpl<$Res>
       contactList: null == contactList
           ? _value._contactList
           : contactList // ignore: cast_nullable_to_non_nullable
-              as List<ContactModel>,
+              as List<ContactGroupModel>,
     ));
   }
 }
@@ -143,7 +143,7 @@ class _$ContactStateImpl implements _ContactState {
       {this.isLoading = false,
       this.isSuccess = false,
       this.isError = false,
-      final List<ContactModel> contactList = const <ContactModel>[]})
+      final List<ContactGroupModel> contactList = const <ContactGroupModel>[]})
       : _contactList = contactList;
 
   @override
@@ -155,10 +155,10 @@ class _$ContactStateImpl implements _ContactState {
   @override
   @JsonKey()
   final bool isError;
-  final List<ContactModel> _contactList;
+  final List<ContactGroupModel> _contactList;
   @override
   @JsonKey()
-  List<ContactModel> get contactList {
+  List<ContactGroupModel> get contactList {
     if (_contactList is EqualUnmodifiableListView) return _contactList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_contactList);
@@ -201,7 +201,7 @@ abstract class _ContactState implements ContactState {
       {final bool isLoading,
       final bool isSuccess,
       final bool isError,
-      final List<ContactModel> contactList}) = _$ContactStateImpl;
+      final List<ContactGroupModel> contactList}) = _$ContactStateImpl;
 
   @override
   bool get isLoading;
@@ -210,7 +210,7 @@ abstract class _ContactState implements ContactState {
   @override
   bool get isError;
   @override
-  List<ContactModel> get contactList;
+  List<ContactGroupModel> get contactList;
 
   /// Create a copy of ContactState
   /// with the given fields replaced by the non-null parameter values.

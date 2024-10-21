@@ -23,5 +23,10 @@ class AppRouter extends RootStackRouter {
           page: ContactListRoute.page,
           maintainState: false,
         ),
+        AutoRoute(
+          path: '/contact-list/:contactId',
+          page: ContactDetailRoute.page,
+          maintainState: false,
+        ),
       ];
 }

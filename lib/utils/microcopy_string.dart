@@ -5,4 +5,6 @@ class MicrocopyString {
   static const String login_desc = ' Please login to see your contact list';
   static const String login_button = 'Login';
   static const String login_hint = '019237sxfsdsasd';
+
+  static const String contact_search = 'Search your contact list...';
 }
