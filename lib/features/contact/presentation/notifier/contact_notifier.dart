@@ -54,4 +54,8 @@ class ContactNotifier extends StateNotifier<ContactState> {
       state = state.copyWith(isError: true);
     }
   }
+
+  void selectContact(ContactModel contactModel) {
+    state = state.copyWith(contactModel: contactModel);
+  }
 }

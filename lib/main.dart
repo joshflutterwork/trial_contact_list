@@ -21,9 +21,11 @@ class MyApp extends StatelessWidget {
       title: 'Trial Contact App',
       theme: ThemeData(
         primaryColor: Palette.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white, // Locking the AppBar color
+        ),
         fontFamily: 'Poppins',
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       debugShowCheckedModeBanner: false,
       routerDelegate: AutoRouterDelegate(

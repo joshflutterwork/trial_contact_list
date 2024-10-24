@@ -10,6 +10,7 @@ import 'package:trial_contact_list/router/router.dart';
 import 'package:trial_contact_list/router/router.gr.dart';
 import 'package:trial_contact_list/utils/microcopy_string.dart';
 import 'package:trial_contact_list/utils/palette.dart';
+import 'package:trial_contact_list/utils/ui/app_bar.dart';
 
 @RoutePage()
 class ContactListPage extends ConsumerStatefulWidget {
@@ -35,30 +36,18 @@ class _ContactListPageState extends ConsumerState<ContactListPage> {
 
     return Scaffold(
       backgroundColor: Palette.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: 130, // Custom height for the AppBar
-        leadingWidth: 0,
-        leading: const SizedBox.shrink(),
-        title: const Padding(
-          padding: EdgeInsets.only(top: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'My Contacts',
-                style: TextStyle(
-                  color: Palette.black,
-                  fontSize: 23,
-                  height: 0.1,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ],
+      appBar: getAppBar(
+        title: <Widget>[
+          const Text(
+            'My Contacts',
+            style: TextStyle(
+              color: Palette.black,
+              fontSize: 23,
+              height: 0.1,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        bottomOpacity: 0.0,
-        elevation: 0.0,
+        ],
       ),
       body: Padding(
         padding:
@@ -150,18 +139,24 @@ class ContactGroupExpansionTile extends StatelessWidget {
       initiallyExpanded: true,
       showTrailingIcon: false,
       children: group.contacts.map((ContactModel contact) {
-        return InkWell(
-          onTap: () async {
-            await s<AppRouter>()
-                .push(ContactDetailRoute(contactId: contact.id ?? ''));
+        return Consumer(
+          builder: (BuildContext context, WidgetRef ref, Widget? child) {
+            return InkWell(
+              onTap: () async {
+                ref.read($contact.notifier).selectContact(contact);
+
+                await s<AppRouter>()
+                    .push(ContactDetailRoute(contactId: contact.id ?? ''));
+              },
+              child: ListTile(
+                enabled: true,
+                title: Text(
+                  contact.firstName ?? '',
+                  style: const TextStyle(height: 0.1),
+                ),
+              ),
+            );
           },
-          child: ListTile(
-            enabled: true,
-            title: Text(
-              contact.firstName ?? '',
-              style: const TextStyle(height: 0.1),
-            ),
-          ),
         );
       }).toList(),
     );

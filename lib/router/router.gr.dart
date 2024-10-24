@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/foundation.dart' as _i6;
+import 'package:flutter/material.dart' as _i6;
 import 'package:trial_contact_list/features/contact/presentation/pages/contact_detail_page.dart'
     as _i1;
 import 'package:trial_contact_list/features/contact/presentation/pages/contact_list_page.dart'

@@ -20,6 +20,7 @@ mixin _$ContactState {
   bool get isSuccess => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   List<ContactGroupModel> get contactList => throw _privateConstructorUsedError;
+  ContactModel? get contactModel => throw _privateConstructorUsedError;
 
   /// Create a copy of ContactState
   /// with the given fields replaced by the non-null parameter values.
@@ -38,7 +39,10 @@ abstract class $ContactStateCopyWith<$Res> {
       {bool isLoading,
       bool isSuccess,
       bool isError,
-      List<ContactGroupModel> contactList});
+      List<ContactGroupModel> contactList,
+      ContactModel? contactModel});
+
+  $ContactModelCopyWith<$Res>? get contactModel;
 }
 
 /// @nodoc
@@ -60,6 +64,7 @@ class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState>
     Object? isSuccess = null,
     Object? isError = null,
     Object? contactList = null,
+    Object? contactModel = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -78,7 +83,25 @@ class _$ContactStateCopyWithImpl<$Res, $Val extends ContactState>
           ? _value.contactList
           : contactList // ignore: cast_nullable_to_non_nullable
               as List<ContactGroupModel>,
+      contactModel: freezed == contactModel
+          ? _value.contactModel
+          : contactModel // ignore: cast_nullable_to_non_nullable
+              as ContactModel?,
     ) as $Val);
+  }
+
+  /// Create a copy of ContactState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactModelCopyWith<$Res>? get contactModel {
+    if (_value.contactModel == null) {
+      return null;
+    }
+
+    return $ContactModelCopyWith<$Res>(_value.contactModel!, (value) {
+      return _then(_value.copyWith(contactModel: value) as $Val);
+    });
   }
 }
 
@@ -94,7 +117,11 @@ abstract class _$$ContactStateImplCopyWith<$Res>
       {bool isLoading,
       bool isSuccess,
       bool isError,
-      List<ContactGroupModel> contactList});
+      List<ContactGroupModel> contactList,
+      ContactModel? contactModel});
+
+  @override
+  $ContactModelCopyWith<$Res>? get contactModel;
 }
 
 /// @nodoc
@@ -114,6 +141,7 @@ class __$$ContactStateImplCopyWithImpl<$Res>
     Object? isSuccess = null,
     Object? isError = null,
     Object? contactList = null,
+    Object? contactModel = freezed,
   }) {
     return _then(_$ContactStateImpl(
       isLoading: null == isLoading
@@ -132,6 +160,10 @@ class __$$ContactStateImplCopyWithImpl<$Res>
           ? _value._contactList
           : contactList // ignore: cast_nullable_to_non_nullable
               as List<ContactGroupModel>,
+      contactModel: freezed == contactModel
+          ? _value.contactModel
+          : contactModel // ignore: cast_nullable_to_non_nullable
+              as ContactModel?,
     ));
   }
 }
@@ -143,7 +175,8 @@ class _$ContactStateImpl implements _ContactState {
       {this.isLoading = false,
       this.isSuccess = false,
       this.isError = false,
-      final List<ContactGroupModel> contactList = const <ContactGroupModel>[]})
+      final List<ContactGroupModel> contactList = const <ContactGroupModel>[],
+      this.contactModel})
       : _contactList = contactList;
 
   @override
@@ -165,8 +198,11 @@ class _$ContactStateImpl implements _ContactState {
   }
 
   @override
+  final ContactModel? contactModel;
+
+  @override
   String toString() {
-    return 'ContactState(isLoading: $isLoading, isSuccess: $isSuccess, isError: $isError, contactList: $contactList)';
+    return 'ContactState(isLoading: $isLoading, isSuccess: $isSuccess, isError: $isError, contactList: $contactList, contactModel: $contactModel)';
   }
 
   @override
@@ -180,12 +216,14 @@ class _$ContactStateImpl implements _ContactState {
                 other.isSuccess == isSuccess) &&
             (identical(other.isError, isError) || other.isError == isError) &&
             const DeepCollectionEquality()
-                .equals(other._contactList, _contactList));
+                .equals(other._contactList, _contactList) &&
+            (identical(other.contactModel, contactModel) ||
+                other.contactModel == contactModel));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, isSuccess, isError,
-      const DeepCollectionEquality().hash(_contactList));
+      const DeepCollectionEquality().hash(_contactList), contactModel);
 
   /// Create a copy of ContactState
   /// with the given fields replaced by the non-null parameter values.
@@ -201,7 +239,8 @@ abstract class _ContactState implements ContactState {
       {final bool isLoading,
       final bool isSuccess,
       final bool isError,
-      final List<ContactGroupModel> contactList}) = _$ContactStateImpl;
+      final List<ContactGroupModel> contactList,
+      final ContactModel? contactModel}) = _$ContactStateImpl;
 
   @override
   bool get isLoading;
@@ -211,6 +250,8 @@ abstract class _ContactState implements ContactState {
   bool get isError;
   @override
   List<ContactGroupModel> get contactList;
+  @override
+  ContactModel? get contactModel;
 
   /// Create a copy of ContactState
   /// with the given fields replaced by the non-null parameter values.

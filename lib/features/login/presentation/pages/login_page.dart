@@ -4,6 +4,7 @@ import 'package:trial_contact_list/core/di/service_locator.dart';
 import 'package:trial_contact_list/router/router.dart';
 import 'package:trial_contact_list/utils/microcopy_string.dart';
 import 'package:trial_contact_list/utils/palette.dart';
+import 'package:trial_contact_list/utils/ui/app_bar.dart';
 
 @RoutePage()
 class LoginPage extends StatefulWidget {
@@ -18,34 +19,27 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette.white,
-      appBar: AppBar(
-        backgroundColor: Palette.white,
-        toolbarHeight: 130, // Custom height for the AppBar
-        title: const Padding(
-          padding: EdgeInsets.only(top: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                MicrocopyString.login_title,
-                style: TextStyle(
-                  color: Palette.blue,
-                  fontSize: 24,
-                  height: 0.1,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              Text(
-                MicrocopyString.login_desc,
-                style: TextStyle(
-                  color: Palette.darkGray,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
+      appBar: getAppBar(
+        title: <Widget>[
+          const Text(
+            MicrocopyString.login_title,
+            style: TextStyle(
+              color: Palette.blue,
+              fontSize: 24,
+              height: 0.1,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
+          const Text(
+            MicrocopyString.login_desc,
+            style: TextStyle(
+              color: Palette.darkGray,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+        leadingIcon: null,
       ),
       body: Padding(
         padding:

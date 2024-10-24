@@ -10,5 +10,5 @@ class Palette {
   static const Color lightGray = Color(0xffEBEBEB);
   static const Color red = Color(0xffED1C2E);
 
-  static const Color button_color = Color(0xFF96D3F2);
+  static const Color button_color = Color.fromARGB(255, 185, 231, 253);
 }

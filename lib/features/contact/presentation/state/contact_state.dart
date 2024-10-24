@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:trial_contact_list/features/contact/data/models/contact_group_list.dart';
+import 'package:trial_contact_list/features/contact/data/models/contact_model.dart';
 
 part 'contact_state.freezed.dart';
 
@@ -10,5 +11,6 @@ class ContactState with _$ContactState {
     @Default(false) bool isSuccess,
     @Default(false) bool isError,
     @Default(<ContactGroupModel>[]) List<ContactGroupModel> contactList,
+    ContactModel? contactModel,
   }) = _ContactState;
 }
